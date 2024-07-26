@@ -1,0 +1,49 @@
+nav {
+    background-color: burlywood;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure the navbar is above other content */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds shadow for better visibility */
+    height: 100px;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  li {
+    display: inline;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+  }
+  
+  a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+  }
+  .logo{
+    margin-left: 1rem;
+    display: block;
+    height: 90px;
+  }
+  .profile-button
+  {
+     background-color: #F8F5F1;
+     color: white;
+     font-size: 60px;
+     cursor: pointer;
+     border: #F8F5F1;
+     margin-left: 150vh;
+  }

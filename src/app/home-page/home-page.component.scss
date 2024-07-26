@@ -1,0 +1,31 @@
+.back
+{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-image: url('/assets/nails2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.back::after
+{
+    content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 50%;
+background: linear-gradient(to bottom, rgba(255,255,255, 0) 0%, rgba(255,255,255, 0.9) 40%, rgba(255,255,255, 1) 100%);
+pointer-events: none;
+    
+
+}
+h2 {
+    margin-top: 60vh; 
+    color: black; 
+    text-align: right; 
+    width: 100%;
+    position: absolute; 
+    right: 8%; 
+}

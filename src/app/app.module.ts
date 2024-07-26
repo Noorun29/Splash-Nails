@@ -7,6 +7,8 @@ import { AppointmentsComponent } from './appointments/appointments.component';
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { AppointmentDetailsComponent } from './appointment-details/appointment-details.component';
 import { BookingFormComponent } from './booking-form/booking-form.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { BookingFormComponent } from './booking-form/booking-form.component';
     AppointmentsComponent,
     AppointmentListComponent,
     AppointmentDetailsComponent,
-    BookingFormComponent
+    BookingFormComponent,
+    HomePageComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
