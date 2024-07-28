@@ -9,6 +9,9 @@ import { AppointmentDetailsComponent } from './appointment-details/appointment-d
 import { BookingFormComponent } from './booking-form/booking-form.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { BraidsPriceListComponent } from './braids-price-list/braids-price-list.component';
+import { LashesPriceListComponent } from './lashes-price-list/lashes-price-list.component';
+import { NailsPriceListComponent } from './nails-price-list/nails-price-list.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     AppointmentDetailsComponent,
     BookingFormComponent,
     HomePageComponent,
-    NavBarComponent
+    NavBarComponent,
+    BraidsPriceListComponent,
+    LashesPriceListComponent,
+    NailsPriceListComponent
   ],
   imports: [
     BrowserModule,

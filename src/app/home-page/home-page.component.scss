@@ -1,31 +1,118 @@
-.back
-{
-    position: fixed;
-    width: 100%;
+.home-container {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
-    background-image: url('/assets/nails2.jpg');
+    overflow: hidden;
+  }
+  .menu-icons {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    display: flex;
+    gap: 10px; /* Space between the icons */
+  }
+  
+  .menu-icon, .profile-icon {
+    cursor: pointer;
+  }
+  
+  .menu-icon .material-symbols-outlined,
+  .profile-icon .material-symbols-outlined {
+    font-variation-settings: 
+      'FILL' 0, 
+      'wght' 400, 
+      'GRAD' 0, 
+      'opsz' 24;
+    font-size: 40px; /* Adjust size as needed */
+    color: black;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1000;
+  }
+  
+  .dropdown-menu.show {
+    display: block;
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #4D2A2A;
+    text-decoration: none;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .image-section {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, white 100%), url('./../../assets/images/nails2.jpg') no-repeat center center;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.back::after
-{
-    content: '';
-position: absolute;
-bottom: 0;
-left: 0;
-width: 100%;
-height: 50%;
-background: linear-gradient(to bottom, rgba(255,255,255, 0) 0%, rgba(255,255,255, 0.9) 40%, rgba(255,255,255, 1) 100%);
-pointer-events: none;
-    
-
-}
-h2 {
-    margin-top: 60vh; 
-    color: black; 
-    text-align: right; 
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4D2A2A;
+  }
+  
+  
+  .discover-text {
+    position: absolute;
+    margin-top: 400px; 
+    right: 20px; 
+    color: black;
+    font-size: 1em;
+    font: weight 100px;
+    font-family:serif
+  }
+ 
+  
+  .services-section {
+    background-color: white;
+    height: 30%; 
+    padding: 20px;
+    text-align: center;
+    font-family:serif ;
+    font-weight: 100;
+  }
+  
+  .service-icons {
+    display: flex;
+    justify-content: space-around;
     width: 100%;
-    position: absolute; 
-    right: 8%; 
-}
+    
+  }
+  
+  .service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .service-item img {
+    width: 100px; 
+    height: 100px; 
+    margin-bottom: 10px;
+    border-radius: 50%;
+  }
+  .service-item span {
+    color: #4D2A2A;
+    font-size: 1.2em; 
+  }
+
+
+
+
+
+

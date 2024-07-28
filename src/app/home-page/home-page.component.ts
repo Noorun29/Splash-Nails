@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent {
+  dropdownVisible = false;
+
+  toggleDropdown() {
+    this.dropdownVisible = !this.dropdownVisible;
+  }
 
 }

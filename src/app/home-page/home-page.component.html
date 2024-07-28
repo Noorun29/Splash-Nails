@@ -1,4 +1,42 @@
-<div class="back">
-    <h2>Effortless <br> Elegance <br> Fingertips</h2>
-</div>
+<!-- src/app/home-page/home-page.component.html -->
+<div class="home-container">
+    <div class="menu-icons">
+        <div class="menu-icon" (click)="toggleDropdown()">
+          <span class="material-symbols-outlined">menu</span>
+        </div>
+        <div class="profile-icon">
+          <span class="material-symbols-outlined">account_circle</span>
+        </div>
+      </div>
+      <div class="dropdown-menu" [ngClass]="{'show': dropdownVisible}">
+        <a routerLink="/book" (click)="toggleDropdown()">Book Appointment</a>
+        <a routerLink="/appointment-details" (click)="toggleDropdown()">Appointment Details</a>
+        <a routerLink="/appointment-list" (click)="toggleDropdown()">Appointment List</a>
+      </div>
+    <div class="image-section">
+      <div class="discover-text">
+        <h1>Nu's <br>Beauty <br>Bar</h1>
+      </div>
+    </div>
+    <div class="services-section">
+      <h2>Services</h2>
+      <div class="service-icons">
+        <div class="service-item"  routerLink="/braids-price-list">
+        <img src='./../../assets/images/braids.jpg' alt="Braiding Hair">
+          <span>Braids</span>
+        </div>
+        <div class="service-item" routerLink="/lashes-price-list">
+         <img src="./../../assets/images/lashes.jpg" alt="Lashes">
+          <span>Lashes</span>
+        </div>
+        <div class="service-item" routerLink="/nails-price-list">
+            <img src="./../../assets/images/nails.jpg" alt="Nails">
+          <span>Nails</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
   
