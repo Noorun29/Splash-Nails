@@ -1,1 +1,42 @@
-<p>booking-form works!</p>
+<div class="appointment-container">
+    <div class="header">
+      <h1>Appointment</h1>
+      <p>Choose Date & Time</p>
+      <span class="material-symbols-outlined menu-icon">menu</span>
+    </div>
+    <div class="calendar">
+      <div class="month-selector">
+        <select [(ngModel)]="selectedMonth" (change)="onMonthChange($event)">
+          <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+        </select>
+      </div>
+      <div class="days">
+        <span>Mo</span>
+        <span>Tu</span>
+        <span>We</span>
+        <span>Th</span>
+        <span>Fr</span>
+        <span>Sa</span>
+        <span>Su</span>
+        <!-- Add dates here -->
+        <span *ngFor="let date of dates" class="date" [ngClass]="{'selected': date.selected}" (click)="selectDate(date)">{{ date.day }}</span>
+      </div>
+    </div>
+    <div class="time-selection">
+      <h2>Morning</h2>
+      <div class="time-slots">
+        <span class="time-slot" *ngFor="let time of morningTimes" [ngClass]="{'selected': time.selected}" (click)="selectTime(time)">{{ time.time }}</span>
+      </div>
+    </div>
+    <div class="specialist-selection">
+      <h2>Choose Beauty Specialist</h2>
+      <div class="specialists">
+        <div class="specialist" *ngFor="let specialist of specialists">
+          <img [src]="specialist.image" [alt]="specialist.name">
+          <p>{{ specialist.name }}</p>
+        </div>
+      </div>
+    </div>
+    <button class="book-button">Book Appointment</button>
+  </div>
+  

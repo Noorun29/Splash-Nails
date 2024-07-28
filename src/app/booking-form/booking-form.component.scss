@@ -1,0 +1,132 @@
+/* src/app/book-appointment/book-appointment.component.scss */
+.appointment-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #fce4ec 50%, #f8bbd0 50%);
+    height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header h1 {
+    font-size: 1.5em;
+    margin: 0;
+  }
+  
+  .header p {
+    margin: 0;
+  }
+  
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .calendar {
+    margin-top: 20px;
+  }
+  
+  .month-selector {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .month-selector select {
+    padding: 5px;
+    font-size: 1em;
+  }
+  
+  .days {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .days span {
+    width: 14.28%;
+    text-align: center;
+  }
+  
+  .date {
+    display: inline-block;
+    width: 14.28%;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+  }
+  
+  .selected {
+    background-color: #f06292;
+    color: white;
+    border-radius: 50%;
+  }
+  
+  .time-selection {
+    margin-top: 20px;
+  }
+  
+  .time-selection h2 {
+    font-size: 1.2em;
+  }
+  
+  .time-slots {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .time-slot {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .time-slot.selected {
+    background-color: #f06292;
+    color: white;
+  }
+  
+  .specialist-selection {
+    margin-top: 20px;
+  }
+  
+  .specialist-selection h2 {
+    font-size: 1.2em;
+  }
+  
+  .specialists {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .specialist {
+    text-align: center;
+  }
+  
+  .specialist img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  
+  .book-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #f06292;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-top: 20px;
+  }
+  

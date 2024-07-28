@@ -12,6 +12,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BraidsPriceListComponent } from './braids-price-list/braids-price-list.component';
 import { LashesPriceListComponent } from './lashes-price-list/lashes-price-list.component';
 import { NailsPriceListComponent } from './nails-price-list/nails-price-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NailsPriceListComponent } from './nails-price-list/nails-price-list.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
