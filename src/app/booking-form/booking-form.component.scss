@@ -2,7 +2,7 @@
 .appointment-container {
     padding: 20px;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #fce4ec 50%, #f8bbd0 50%);
+    background: white;
     height: 100vh;
   }
   
@@ -40,30 +40,30 @@
     font-size: 1em;
   }
   
+
   .days {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
   }
   
   .days span {
-    width: 14.28%;
-    text-align: center;
-  }
-  
-  .date {
-    display: inline-block;
-    width: 14.28%;
-    text-align: center;
-    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; /* Adjust height as needed */
     cursor: pointer;
   }
-  
-  .selected {
-    background-color: #f06292;
-    color: white;
-    border-radius: 50%;
+  .date {
+    background: #f4f4f4;
+    border-radius: 30%;
+    transition: background 0.3s;
   }
+
+.date.selected {
+  background-color: #3f3c3d;
+  color: white;
+}
   
   .time-selection {
     margin-top: 20px;
@@ -90,7 +90,7 @@
   }
   
   .time-slot.selected {
-    background-color: #f06292;
+    background-color: #6e696b;
     color: white;
   }
   
@@ -121,7 +121,7 @@
   .book-button {
     width: 100%;
     padding: 15px;
-    background-color: #f06292;
+    background-color: #6e696b;
     color: white;
     border: none;
     border-radius: 5px;

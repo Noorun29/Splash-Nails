@@ -2,7 +2,7 @@
     <div class="header">
       <h1>Appointment</h1>
       <p>Choose Date & Time</p>
-      <span class="material-symbols-outlined menu-icon">menu</span>
+      <!-- <span class="material-symbols-outlined menu-icon">menu</span> -->
     </div>
     <div class="calendar">
       <div class="month-selector">
@@ -22,12 +22,22 @@
         <span *ngFor="let date of dates" class="date" [ngClass]="{'selected': date.selected}" (click)="selectDate(date)">{{ date.day }}</span>
       </div>
     </div>
+    <div class="period-selection">
+      <h2>Select Time Period</h2>
+      <button (click)="selectPeriod('morning')" [ngClass]="{'active': selectedPeriod === 'morning'}">Morning</button>
+      <button (click)="selectPeriod('afternoon')" [ngClass]="{'active': selectedPeriod === 'afternoon'}">Afternoon</button>
+    </div>
+    
     <div class="time-selection">
-      <h2>Morning</h2>
+      <h2>{{ selectedPeriod | uppercase }}</h2>
       <div class="time-slots">
-        <span class="time-slot" *ngFor="let time of morningTimes" [ngClass]="{'selected': time.selected}" (click)="selectTime(time)">{{ time.time }}</span>
+        <span class="time-slot" *ngFor="let time of (selectedPeriod === 'morning' ? morningTimes : afternoonTimes)"
+              [ngClass]="{'selected': time.selected}" (click)="selectTime(time)">
+          {{ time.time }}
+        </span>
       </div>
     </div>
+    
     <div class="specialist-selection">
       <h2>Choose Beauty Specialist</h2>
       <div class="specialists">
