@@ -1,6 +1,13 @@
 <nav class="nav-bar justify-content-center">
-    <img src="/assets/logo.png" alt="logo" class="logo">
-    <a class="nav-link" routerLink="/booking-form" routerLinkActive="active">Book Appointment</a>
-    <a class="nav-link" routerLink="/appointment-details" routerLinkActive="active">Appointment Details</a>
-  </nav>
+  <div class="back-button">
+    <a routerLink="/">
+      <span class="material-symbols-outlined">arrow_back</span>
+    </a>
+  </div>
+
+  <ng-container *ngIf="showHeader">
+    <h1>{{headerTitle}}</h1>
+  </ng-container>
+</nav>
+
   

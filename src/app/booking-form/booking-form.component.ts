@@ -29,9 +29,9 @@ export class BookingFormComponent implements OnInit {
   selectedPeriod: 'morning' | 'afternoon' = 'morning';
 
   specialists = [
-    { name: 'Alison', image: 'assets/images/alison.jpg' },
-    { name: 'Cara', image: 'assets/images/cara.jpg' },
-    { name: 'Tony', image: 'assets/images/tony.jpg' }
+    { name: 'Alison', image: './../../assets/images/beautician.jpg' },
+    { name: 'Cara', image: './../../assets/images/beautician.jpg' },
+    { name: 'Tony', image: './../../assets/images/beautician.jpg' }
   ];
 
   constructor() { }
@@ -91,5 +91,10 @@ export class BookingFormComponent implements OnInit {
     // Optionally clear the selected time slot when switching periods
     const timeSlots = period === 'morning' ? this.morningTimes : this.afternoonTimes;
     timeSlots.forEach(t => t.selected = false);
+  }
+  dropdownVisible = false;
+
+  toggleDropdown() {
+    this.dropdownVisible = !this.dropdownVisible;
   }
 }

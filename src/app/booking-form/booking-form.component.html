@@ -1,8 +1,7 @@
+<app-nav-bar [showHeader]="true" headerTitle="Book Appointment"></app-nav-bar>
 <div class="appointment-container">
     <div class="header">
-      <h1>Appointment</h1>
       <p>Choose Date & Time</p>
-      <!-- <span class="material-symbols-outlined menu-icon">menu</span> -->
     </div>
     <div class="calendar">
       <div class="month-selector">
@@ -18,7 +17,7 @@
         <span>Fr</span>
         <span>Sa</span>
         <span>Su</span>
-        <!-- Add dates here -->
+        
         <span *ngFor="let date of dates" class="date" [ngClass]="{'selected': date.selected}" (click)="selectDate(date)">{{ date.day }}</span>
       </div>
     </div>
