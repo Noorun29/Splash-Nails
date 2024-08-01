@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +8,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  email: string = '';
+  password: string = '';
+
+  constructor(private router: Router) { }
+
+  onSubmit() {
+    // Handle login logic here
+    console.log('Email:', this.email);
+    console.log('Password:', this.password);
+    this.router.navigate(['/']);
+  }
+}
+
+  
 //   public login!: FormGroup;
 //   public userLoggedIn: boolean = false;
 //   public userEmail: string = '';
@@ -81,6 +96,6 @@ export class LoginComponent {
 //       );
 //   }
 // }
-}
+// }
 
 

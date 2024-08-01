@@ -26,8 +26,8 @@ export class BookingFormComponent implements OnInit {
 
   specialists = [
     { name: 'Alison', image: './../../assets/images/beautician.jpg' },
-    { name: 'Cara', image: './../../assets/images/beautician.jpg' },
-    { name: 'Tony', image: './../../assets/images/beautician.jpg' }
+    { name: 'Teboo', image: './../../assets/images/beautician 1.jpg' },
+    { name: 'Lesego', image: './../../assets/images/beautician 2.jpg' }
   ];
 
   dropdownVisible = false;
@@ -104,8 +104,8 @@ export class BookingFormComponent implements OnInit {
     timeSlots.forEach(t => t.selected = false);
   }
 
-  toggleDropdown() {
-    this.dropdownVisible = !this.dropdownVisible;
-  }
+  // toggleDropdown() {
+  //   this.dropdownVisible = !this.dropdownVisible;
+  // }
 }
 
