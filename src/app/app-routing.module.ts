@@ -8,6 +8,8 @@ import { AppointmentsComponent } from './appointments/appointments.component';
 import { BraidsPriceListComponent } from './braids-price-list/braids-price-list.component';
 import { LashesPriceListComponent } from './lashes-price-list/lashes-price-list.component';
 import { NailsPriceListComponent } from './nails-price-list/nails-price-list.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent},
@@ -19,6 +21,8 @@ const routes: Routes = [
   { path: 'braids-price-list', component: BraidsPriceListComponent },
   { path: 'lashes-price-list', component: LashesPriceListComponent },
   { path: 'nails-price-list', component: NailsPriceListComponent },
+  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {path: '**', redirectTo: 'home', pathMatch: 'full'},
   

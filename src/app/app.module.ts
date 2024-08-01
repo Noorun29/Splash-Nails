@@ -12,7 +12,11 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BraidsPriceListComponent } from './braids-price-list/braids-price-list.component';
 import { LashesPriceListComponent } from './lashes-price-list/lashes-price-list.component';
 import { NailsPriceListComponent } from './nails-price-list/nails-price-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,12 +29,17 @@ import { FormsModule } from '@angular/forms';
     NavBarComponent,
     BraidsPriceListComponent,
     LashesPriceListComponent,
-    NailsPriceListComponent
+    NailsPriceListComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot([]),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

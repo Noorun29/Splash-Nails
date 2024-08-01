@@ -29,7 +29,7 @@
       'GRAD' 0, 
       'opsz' 24;
     font-size: 40px; /* Adjust size as needed */
-    color: grey;
+    color: #4D2A2A;
   }
   
   .dropdown-menu {
@@ -37,7 +37,7 @@
     position: absolute;
     top: 60px; /* Adjust as needed */
     right: 20px; /* Adjust as needed */
-    background-color: white;
+    background-color: burlywood;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     overflow: hidden;
@@ -51,7 +51,7 @@
   .dropdown-menu a {
     display: block;
     padding: 10px 20px;
-    color: #4D2A2A;
+    color: white;
     text-decoration: none;
   }
   
@@ -79,7 +79,7 @@
     position: absolute;
     margin-top: 400px; 
     right: 20px; 
-    color: black;
+    color: #4D2A2A;
     font-size: 1em;
     font: weight 100px;
     font-family:serif
@@ -87,43 +87,53 @@
  
   
   .services-section {
-    background: linear-gradient(
-      to bottom, 
-      rgba(255, 229, 180, 1) 0%, 
-      rgba(255, 229, 180, 1) 100%
-    );
-    height: 30%; 
-    padding: 20px;
-    text-align: center;
-    font-family: serif;
-    font-weight: 100;
-  }
-  
-  .service-icons {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    
-  }
-  
-  .service-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    text-align: center;
-  }
-  
-  .service-item img {
-    width: 100px; 
-    height: 100px; 
-    margin-bottom: 10px;
-    border-radius: 50%;
-  }
-  .service-item span {
-    color: #4D2A2A;
-    font-size: 1.2em; 
-  }
+  background: linear-gradient(
+    to bottom, 
+    rgba(255, 229, 180, 1) 0%, 
+    rgba(255, 229, 180, 1) 100%
+  );
+  height: 30%; 
+  padding: 20px;
+  text-align: center;
+  font-family: serif;
+  font-weight: 100;
+}
+
+.service-icons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  text-align: center;
+}
+
+.service-item img {
+  width: 100px; 
+  height: 100px; 
+  margin-bottom: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+.service-item img:hover {
+  transform: translateY(-20px); 
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); 
+}
+
+.service-item span {
+  color: #4D2A2A;
+  font-size: 1.2em; 
+}
+.h2{
+  color: #4D2A2A;
+}
 
 
 

@@ -7,25 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookingFormComponent implements OnInit {
   months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  selectedMonth = 'February';
+  selectedMonthIndex = this.months.indexOf('August');
   dates: { day: number; selected: boolean }[] = [];
   
-  // Time slots for morning and afternoon
   morningTimes: { time: string; selected: boolean }[] = [
     { time: '9:00 AM', selected: false },
     { time: '10:00 AM', selected: false },
     { time: '11:00 AM', selected: false },
-    // Add more morning slots if needed
   ];
 
   afternoonTimes: { time: string; selected: boolean }[] = [
     { time: '1:00 PM', selected: false },
     { time: '2:00 PM', selected: false },
     { time: '3:00 PM', selected: false },
-    // Add more afternoon slots if needed
   ];
 
-  // Selected period (morning or afternoon)
   selectedPeriod: 'morning' | 'afternoon' = 'morning';
 
   specialists = [
@@ -34,19 +30,34 @@ export class BookingFormComponent implements OnInit {
     { name: 'Tony', image: './../../assets/images/beautician.jpg' }
   ];
 
+  dropdownVisible = false;
+
   constructor() { }
 
   ngOnInit(): void {
     this.updateDates(); // Initialize dates when the component is loaded
   }
 
-  onMonthChange(event: any): void {
-    this.selectedMonth = event.target.value; // Update selected month
+  previousMonth(): void {
+    if (this.selectedMonthIndex > 0) {
+      this.selectedMonthIndex--;
+    } else {
+      this.selectedMonthIndex = this.months.length - 1; // Go to December if current month is January
+    }
+    this.updateDates(); // Update dates based on the new selected month
+  }
+
+  nextMonth(): void {
+    if (this.selectedMonthIndex < this.months.length - 1) {
+      this.selectedMonthIndex++;
+    } else {
+      this.selectedMonthIndex = 0; // Go to January if current month is December
+    }
     this.updateDates(); // Update dates based on the new selected month
   }
 
   updateDates(): void {
-    this.dates = this.generateDates(this.selectedMonth);
+    this.dates = this.generateDates(this.months[this.selectedMonthIndex]);
   }
 
   generateDates(month: string): { day: number; selected: boolean }[] {
@@ -92,9 +103,9 @@ export class BookingFormComponent implements OnInit {
     const timeSlots = period === 'morning' ? this.morningTimes : this.afternoonTimes;
     timeSlots.forEach(t => t.selected = false);
   }
-  dropdownVisible = false;
 
   toggleDropdown() {
     this.dropdownVisible = !this.dropdownVisible;
   }
 }
+

@@ -5,9 +5,9 @@
     </div>
     <div class="calendar">
       <div class="month-selector">
-        <select [(ngModel)]="selectedMonth" (change)="onMonthChange($event)">
-          <option *ngFor="let month of months" [value]="month">{{ month }}</option>
-        </select>
+        <button (click)="previousMonth()">&lt;</button>
+        <span>{{ months[selectedMonthIndex] }}</span>
+        <button (click)="nextMonth()">&gt;</button>
       </div>
       <div class="days">
         <span>Mo</span>
