@@ -1,0 +1,82 @@
+.appointment-list-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 110px;
+  
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .no-appointments {
+      text-align: center;
+      font-size: 1.2em;
+      color: #888;
+    }
+  
+    .appointment-table {
+      width: 100%;
+      border-collapse: collapse;
+  
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+  
+      th {
+        background-color: #f2f2f2;
+      }
+  
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+  
+      tr:hover {
+        background-color: #f1f1f1;
+      }
+    }
+  
+    .delete-button {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  
+    .delete-button:hover {
+      background-color: #c0392b;
+    }
+  
+    @media (max-width: 600px) {
+      .appointment-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+  
+      th, td {
+        padding: 10px 5px;
+      }
+  
+      th {
+        font-size: 0.9em;
+      }
+  
+      td {
+        font-size: 0.8em;
+      }
+  
+      .delete-button {
+        padding: 5px;
+      }
+    }
+  }
+  

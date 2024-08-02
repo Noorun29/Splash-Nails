@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AppointmentService } from '../service/appointment.service';
-import { Appointment } from '../service/Appointment';
-
+import { AppointmentService, Appointment } from '../service/appointment.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-appointment-list',
@@ -9,24 +8,40 @@ import { Appointment } from '../service/Appointment';
   styleUrls: ['./appointment-list.component.scss']
 })
 export class AppointmentListComponent implements OnInit {
-  appointments!: Appointment[];
+  appointments: Appointment[] = [];
 
-  constructor(private appointmentService: AppointmentService) { }
+  constructor(
+    private appointmentService: AppointmentService,
+    private location: Location
+  ) { }
 
   ngOnInit(): void {
-    this.getAppointments();
+    this.loadAppointments();
   }
 
-  getAppointments(): void {
-    this.appointmentService.getAppointments()
-      .subscribe(appointments => this.appointments = appointments);
+  loadAppointments(): void {
+    this.appointmentService.getAppointments().subscribe(
+      (appointments) => {
+        this.appointments = appointments;
+      },
+      (error) => {
+        console.error('Error loading appointments:', error);
+      }
+    );
   }
 
   deleteAppointment(id: number): void {
-    this.appointmentService.deleteAppointment(id)
-      .subscribe(() => {
-        this.appointments = this.appointments.filter(a => a.id !== id);
-      });
+    this.appointmentService.deleteAppointment(id).subscribe(
+      () => {
+        this.appointments = this.appointments.filter(appointment => appointment.id !== id);
+      },
+      (error) => {
+        console.error('Error deleting appointment:', error);
+      }
+    );
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }
-

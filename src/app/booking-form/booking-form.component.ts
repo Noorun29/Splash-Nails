@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Appointment, AppointmentService } from '../service/appointment.service';
+
 
 @Component({
   selector: 'app-booking-form',
@@ -25,14 +27,14 @@ export class BookingFormComponent implements OnInit {
   selectedPeriod: 'morning' | 'afternoon' = 'morning';
 
   specialists = [
-    { name: 'Alison', image: './../../assets/images/beautician.jpg' },
+    { name: 'Amanda', image: './../../assets/images/beautician.jpg' },
     { name: 'Teboo', image: './../../assets/images/beautician 1.jpg' },
     { name: 'Lesego', image: './../../assets/images/beautician 2.jpg' }
   ];
 
   dropdownVisible = false;
 
-  constructor() { }
+  constructor(private appointmentService: AppointmentService) { }
 
   ngOnInit(): void {
     this.updateDates(); // Initialize dates when the component is loaded
@@ -104,8 +106,37 @@ export class BookingFormComponent implements OnInit {
     timeSlots.forEach(t => t.selected = false);
   }
 
-  // toggleDropdown() {
-  //   this.dropdownVisible = !this.dropdownVisible;
-  // }
-}
+  bookAppointment(): void {
+    const selectedDate = this.dates.find(date => date.selected)?.day;
+    const selectedTime = this.selectedPeriod === 'morning'
+      ? this.morningTimes.find(time => time.selected)?.time
+      : this.afternoonTimes.find(time => time.selected)?.time;
 
+    if (selectedDate && selectedTime) {
+      const month = this.selectedMonthIndex + 1;
+      const day = selectedDate < 10 ? `0${selectedDate}` : selectedDate;
+      const time = selectedTime.split(' ')[0];
+      const timeWithSeconds = time.includes(':') ? time + ':00' : time + ':00:00';
+      const formattedTime = selectedTime.includes('AM') ? timeWithSeconds : `${Number(time.split(':')[0]) + 12}:${time.split(':')[1]}:00`;
+
+      const appointment: Appointment = {
+        id: 0, // ID will be handled by the backend
+        userDet: 'John Doe', // This should come from user input or session
+        email: 'john.doe@example.com', // This should come from user input
+        contactNo: '+1234567890', // This should come from user input
+        description: 'Consultation regarding new project', // User-provided description
+        appointmentDate: `2024-${month < 10 ? '0' + month : month}-${day}T${formattedTime}Z` // Format appropriately
+      };
+
+      this.appointmentService.createAppointment(appointment).subscribe(response => {
+        console.log('Appointment created:', response);
+        alert('Appointment successfully booked!');
+      }, error => {
+        console.error('Error creating appointment:', error);
+        alert('Failed to book appointment.');
+      });
+    } else {
+      alert('Please select a date and time.');
+    }
+  }
+}

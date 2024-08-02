@@ -1,7 +1,6 @@
 <app-nav-bar [showHeader]="true" headerTitle="Book Appointment"></app-nav-bar>
 <div class="appointment-container">
     <div class="header">
-      <p>Choose Date & Time</p>
     </div>
     <div class="calendar">
       <div class="month-selector">
@@ -46,6 +45,5 @@
         </div>
       </div>
     </div>
-    <button class="book-button">Book Appointment</button>
-  </div>
-  
+    <button class="book-button" (click)="bookAppointment()">Book Appointment</button>
+</div>

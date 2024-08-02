@@ -1,32 +1,48 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { Appointment } from './Appointment';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
+export interface Appointment {
+  id: number;
+  userDet: string;
+  email: string;
+  contactNo: string;
+  description: string;
+  appointmentDate: string;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppointmentService {
-  private appointments: Appointment[] = [
-    { id: 1, date: '2024-07-25', time: '10:00 AM', customerName: 'Alice' },
-    { id: 2, date: '2024-07-26', time: '11:00 AM', customerName: 'Bob' },
-    // more appointments
-  ];
+  private apiUrl = 'http://localhost:8080/api/v1/appointment';
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
 
+  // Create a new appointment
+  createAppointment(appointment: Appointment): Observable<Appointment> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<Appointment>(this.apiUrl, appointment, { headers });
+  }
+
+  // Fetch all appointments
   getAppointments(): Observable<Appointment[]> {
-    return of(this.appointments);
+    return this.http.get<Appointment[]>(this.apiUrl);
   }
 
-  bookAppointment(appointment: Appointment): Observable<Appointment> {
-    appointment.id = this.appointments.length + 1;
-    this.appointments.push(appointment);
-    return of(appointment);
+  // Fetch a single appointment by ID
+  getAppointmentById(id: number): Observable<Appointment> {
+    return this.http.get<Appointment>(`${this.apiUrl}/${id}`);
   }
 
+  // Update an existing appointment
+  updateAppointment(id: number, appointment: Appointment): Observable<Appointment> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.put<Appointment>(`${this.apiUrl}/${id}`, appointment, { headers });
+  }
+
+  // Delete an appointment by ID
   deleteAppointment(id: number): Observable<void> {
-    this.appointments = this.appointments.filter(a => a.id !== id);
-    return of();
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

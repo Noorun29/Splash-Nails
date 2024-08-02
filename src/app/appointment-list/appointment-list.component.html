@@ -1,1 +1,41 @@
-<p>appointment-list works!</p>
+<app-nav-bar [showHeader]="true" headerTitle="Appointment List"></app-nav-bar>
+<div class="appointment-list-container">
+
+    <!-- <button (click)="goBack()" class="back-button">Back</button>
+    
+    <h1>Appointment List</h1> -->
+  
+    <div *ngIf="appointments.length === 0" class="no-appointments">
+      <p>No appointments available.</p>
+    </div>
+  
+    <table *ngIf="appointments.length > 0" class="appointment-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>User Details</th>
+          <th>Email</th>
+          <th>Contact No</th>
+          <th>Description</th>
+          <th>Appointment Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let appointment of appointments">
+          <td>{{ appointment.id }}</td>
+          <td>{{ appointment.userDet }}</td>
+          <td>{{ appointment.email }}</td>
+          <td>{{ appointment.contactNo }}</td>
+          <td>{{ appointment.description }}</td>
+          <td>{{ appointment.appointmentDate | date: 'medium' }}</td>
+          <td>
+            <button (click)="deleteAppointment(appointment.id)" class="delete-button">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

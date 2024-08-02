@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'lashes-price-list', component: LashesPriceListComponent },
   { path: 'nails-price-list', component: NailsPriceListComponent },
   { path: 'login', component: LoginComponent},
+  { path: 'appointmentList', component: AppointmentListComponent}, 
   { path: 'register', component: RegisterComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {path: '**', redirectTo: 'home', pathMatch: 'full'},
